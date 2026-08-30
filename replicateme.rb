@@ -5,21 +5,21 @@
 class Replicateme < Formula
   desc "CLI that learns your writing style and generates messages that sound like you"
   homepage "https://replicateme.cc"
-  version "0.2.0"
+  version "0.3.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/jschell12/replicateme/releases/download/v0.2.0/replicateme_darwin_amd64.tar.gz"
-      sha256 "e4e8d69cc36e7431f20e393320306bc3014e1943d84cc06cb078076620e4f5a5"
+      url "https://github.com/jschell12/replicateme/releases/download/v0.3.0/replicateme_darwin_amd64.tar.gz"
+      sha256 "90066f6dd1f0c2a06c5e50fd057ba1b34a972d71aaadaf039314a116f1db4efd"
 
       define_method(:install) do
         bin.install "replicateme"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/jschell12/replicateme/releases/download/v0.2.0/replicateme_darwin_arm64.tar.gz"
-      sha256 "801e9dfd9b2ecc453e834bf37f75aa459e2f7c00dc872f851932baef70826066"
+      url "https://github.com/jschell12/replicateme/releases/download/v0.3.0/replicateme_darwin_arm64.tar.gz"
+      sha256 "744c9bee0dc0417e81e484d7e4d249b47c71a903d99a1e5772a382d7cea8bf3f"
 
       define_method(:install) do
         bin.install "replicateme"
@@ -29,15 +29,15 @@ class Replicateme < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jschell12/replicateme/releases/download/v0.2.0/replicateme_linux_amd64.tar.gz"
-      sha256 "f71d5455284258bb07402137e697a385e94be7389267062c1cb896a36450fece"
+      url "https://github.com/jschell12/replicateme/releases/download/v0.3.0/replicateme_linux_amd64.tar.gz"
+      sha256 "ac7475134632f6c9a940e36c5d03bf7fcc909e695ad7aa75dc83a3394f69d5ff"
       define_method(:install) do
         bin.install "replicateme"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jschell12/replicateme/releases/download/v0.2.0/replicateme_linux_arm64.tar.gz"
-      sha256 "2a454a147a4e51a6e80a448bb98283872b070a74cb773462155c1345cf6d37ba"
+      url "https://github.com/jschell12/replicateme/releases/download/v0.3.0/replicateme_linux_arm64.tar.gz"
+      sha256 "6f8ba7d5662b6b432ac604e414d9a7f99975e650386c0f5ad8637ed05dc17a3f"
       define_method(:install) do
         bin.install "replicateme"
       end
