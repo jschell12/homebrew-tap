@@ -2,25 +2,25 @@
 cask "workforce" do
   binary "workforce", target: "wf"
 
-  version "0.1.1"
+  version "0.1.2"
 
   on_macos do
     on_arm do
-      sha256 "e93c2d6fb8fe39ab327d69502ce6043a73fc2446da64d04d8224556cb1581295"
+      sha256 "a2308c2bc0ec71bfcea1d94d64fb12ea743a48ed5031598585b75466c5ba496c"
       url "https://github.com/jschell12/workforce/releases/download/v#{version}/workforce_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "2791da4f948423f71fd1c56ec16b28607b97a77f0b9e8e11d2a3a2b0ba8f04bb"
+      sha256 "33a22a1b1af37b1f91059255c14d92e21e7c4a9c4e76db2797e043ce19574c09"
       url "https://github.com/jschell12/workforce/releases/download/v#{version}/workforce_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "3fd47fb2152b8aa5ab61fcb99028df60b283c7b54e99143ae673fc670b974f4d"
+      sha256 "05373796e7be9e68c450ef31d80461940f786441e262b5eb4950c37bf5ab028d"
       url "https://github.com/jschell12/workforce/releases/download/v#{version}/workforce_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "964c7e33152e7ebdffc63a352aa0854bd3191c7c28f156f8bd40d0ffec59830c"
+      sha256 "59b08b3b247b14510ce73b49c07265462bb298b9e49d469dd14879b506a747d9"
       url "https://github.com/jschell12/workforce/releases/download/v#{version}/workforce_linux_amd64.tar.gz"
     end
   end
@@ -34,6 +34,13 @@ cask "workforce" do
   end
 
   binary "workforce"
+
+  postflight do
+    if system_command("/usr/bin/xattr", args: ["-h"]).exit_status.zero?
+      system_command "/usr/bin/xattr",
+                     args: ["-dr", "com.apple.quarantine", "#{staged_path}/workforce"]
+    end
+  end
 
   # No zap stanza required
 
