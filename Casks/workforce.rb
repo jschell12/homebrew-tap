@@ -2,25 +2,25 @@
 cask "workforce" do
   binary "workforce", target: "wf"
 
-  version "0.1.4"
+  version "0.1.5"
 
   on_macos do
     on_arm do
-      sha256 "3ef03eb3fb441143caf04726d425b8a49eb9bec41f13ac5925d63da7b42ebc61"
+      sha256 "0eeb2f16158bb5895ef7ff3c7fc209414099c4d17e91d58d64e259ae0c2d34f5"
       url "https://github.com/jschell12/workforce/releases/download/v#{version}/workforce_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "352a746d77ac634f09e320666cf141d7623761c73169727b6acb9b6d66787a1a"
+      sha256 "ddb773a6d67f468ebb8967bc8362b773f1655ee0df0c6b6a2afada5f2596c14e"
       url "https://github.com/jschell12/workforce/releases/download/v#{version}/workforce_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "6046a9de362cac3779d626f4b324934b73010e65064c5fc0149cf830a1912b9d"
+      sha256 "a50eaafc15c86472014bab80978f4933f22f6310afd0935b135998c373b279c2"
       url "https://github.com/jschell12/workforce/releases/download/v#{version}/workforce_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "5625abf3bad554851bd856b02b94c9dca8bb652d0a694893ca6be4e696716bbd"
+      sha256 "f1a97a4a8d5be66cab7d214628b49080cf8d148b76c7dbf2b3808520fdd0f843"
       url "https://github.com/jschell12/workforce/releases/download/v#{version}/workforce_linux_amd64.tar.gz"
     end
   end
